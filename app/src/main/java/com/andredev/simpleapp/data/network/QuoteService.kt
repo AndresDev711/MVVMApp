@@ -1,21 +1,16 @@
 package com.andredev.simpleapp.data.network
 
-import com.andredev.simpleapp.core.RetrofitHelper
 import com.andredev.simpleapp.data.model.QuoteModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import retrofit2.Response
+import javax.inject.Inject
 
-class QuoteService {
-
-    private val retrofit = RetrofitHelper.getRetrofit()
+class QuoteService @Inject constructor(private val api:QuoteApiClient) {
 
     suspend fun getQuotes(): List<QuoteModel> {
 
         return withContext(Dispatchers.IO){
-            val response: Response<List<QuoteModel>> = retrofit
-                .create(QuoteApiClient::class.java)
-                .getAllQuotes()
+            val response = api.getAllQuotes()
             response.body() ?: emptyList()
         }
 

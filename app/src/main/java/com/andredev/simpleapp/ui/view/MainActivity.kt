@@ -7,7 +7,9 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.andredev.simpleapp.databinding.ActivityMainBinding
 import com.andredev.simpleapp.ui.viewmodel.QuoteViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -29,8 +31,6 @@ class MainActivity : AppCompatActivity() {
             binding.tvQuote.text = quoteResult.quote
             binding.tvAuthor.text = quoteResult.author
         })
-
-
 
         binding.viewContainer.setOnClickListener {
             quoteViewModel.randomQuote()
