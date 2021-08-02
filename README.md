@@ -3,6 +3,7 @@
 This example is done using:
 MVVM
 Coroutine
+Dagger-Hilt
 
 example taken from: AristiDevs (youtube)
 
