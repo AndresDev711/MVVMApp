@@ -1,10 +1,12 @@
 # MVVMApp
-
 This example is done using:
+</br>
 MVVM
+</br>
 Coroutine
+</br>
 Dagger-Hilt
-
+</br>
 example taken from: AristiDevs (youtube)
 
 ## Skills:
